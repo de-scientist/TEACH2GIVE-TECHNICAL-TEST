@@ -1,0 +1,32 @@
+<!--Question 2: Fibonacci Sequence
+Write a program to generate the Fibonacci sequence up to 100.-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fibonacci Sequence Generator</title>
+</head>
+<body>
+    <h2>Fibonacci Sequence Generator</h2>
+    <p id="fibonacciSequence"></p>
+
+    <script>
+        function generateFibonacci() {
+            var fibonacciSequence = [0, 1];
+            var nextFibonacci = 1;
+
+            while (nextFibonacci <= 100) {
+                fibonacciSequence.push(nextFibonacci);
+                nextFibonacci = fibonacciSequence[fibonacciSequence.length - 1] + fibonacciSequence[fibonacciSequence.length - 2];
+            }
+
+            // Display the Fibonacci sequence
+            document.getElementById("fibonacciSequence").innerText = "Fibonacci Sequence: " + fibonacciSequence.join(", ");
+        }
+
+        // Call the function when the page loads
+        generateFibonacci();
+    </script>
+</body>
+</html>

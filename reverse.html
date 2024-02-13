@@ -1,0 +1,37 @@
+<!--Write a program that takes an integer as input and returns an integer with reversed digit 
+ordering.
+Examples:
+For input 500, the program should return 5.
+For input -56, the program should return -65.
+For input -90, the program should return -9.
+For input 91, the program should return 19-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reverse Integer</title>
+</head>
+<body>
+    <h2>Reverse Integer</h2>
+    <label for="inputNumber">Enter an integer:</label>
+    <input type="number" id="inputNumber">
+    <button onclick="reverseInteger()">Reverse</button>
+    <p id="result"></p>
+
+    <script>
+        function reverseInteger() {
+            var inputNumber = parseInt(document.getElementById("inputNumber").value);
+
+            // Check if the input is a valid number
+            if (isNaN(inputNumber)) {
+                document.getElementById("result").innerText = "Please enter a valid integer.";
+                return;
+            }
+
+            var reversedNumber = parseInt(inputNumber.toString().split('').reverse().join(''));
+            document.getElementById("result").innerText = "Reversed integer: " + reversedNumber;
+        }
+    </script>
+</body>
+</html>
